@@ -20,6 +20,20 @@ export default function User({ user }) {
                         <div className="user-email">{user.email}</div>
                     </div>
                 </div>
+                <div className="user-status-container">
+                    <span className={`user-status 
+                    ${user.status === `registered` && `status-registered`}
+                    ${user.status === `in_progress` && `status-in-progress`}
+                    ${user.status === `completed` && `status-completed`}
+                    ${user.status === `failed` && `status-failed`}
+                    
+                    `}>{user.status === `registered` && `Registrado`}
+                        {user.status === `in_progress` && `En progreso`}
+                        {user.status === `completed` && `Completado`}
+                        {user.status === `failed` && `No aprobado`}
+                    </span>
+
+                </div>
             </div>
         </li>
     )

@@ -6,8 +6,13 @@ export default function Beer({ beer }) {
     const [quantity, setQuantity] = useState(0);
     const [message, setMessage] = useState("");
 
-    const handlerPlus = () => {
-        setQuantity(quantity + 1);
+    const handlerPlus = (operator) => {
+
+        if (operator === "plus") {
+            setQuantity(quantity + 1);
+        } else if (operator === "minus" && quantity > 0) {
+            setQuantity(quantity - 1);
+        }
     }
 
     // TODO implementar handlerMinus
@@ -40,9 +45,9 @@ export default function Beer({ beer }) {
                 {/* Control de cantidad */}
                 <div className="quantity-control">
                     <span className="quantity-label">Cantidad:</span>
-                    <button className="quantity-button quantity-button-left">-</button>
+                    <button onClick={() => handlerPlus("minus")} className="quantity-button quantity-button-left">-</button>
                     <span className="quantity-display">{quantity}</span>
-                    <button onClick={handlerPlus} className="quantity-button quantity-button-right">+</button>
+                    <button onClick={() => handlerPlus("plus")} className="quantity-button quantity-button-right">+</button>
                 </div>
 
                 {/* botón de compra */}
