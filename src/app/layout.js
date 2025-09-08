@@ -25,11 +25,13 @@ export default function RootLayout({ children }) {
         <NavBar />
 
 
-          <main>
-            {children}
+        <main>
+          {children}
+        </main>
 
         <Footer />
       </body>
     </html>
   );
 }
+
