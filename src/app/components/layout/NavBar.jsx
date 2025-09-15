@@ -12,7 +12,10 @@ import Notifications from './Notifications';
 import CurrentUser from './CurrentUser';
 
 export default function Navbar() {
-  const { currentUser, logout } = {currentUser: {
+  // TODO: Obtener el usuario del local storage una vez hecho el login
+
+  
+    const { currentUser, logout } = {currentUser: {
     id: '15',
     name: 'Grady Archie',
     avatar: 'https://raw.githubusercontent.com/ORT-PabloFernandez/PNTP2-REACT-EJEMPLO/main/public/img/Grady%20Archie.jpg',
